@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up </title>
+    <title>Login </title>
     <style>
-        #cont{
-               width: 30%; height: 600px;  margin: auto; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+         #cont{
+               width: 30%; height: 500px;  margin: auto; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
         h1{
             text-align: center;
@@ -31,41 +31,17 @@
 </head>
 <body>
     <div id="cont">
-        <h1>Sign UP</h1>
+        <h1>Sign In</h1>
         <form id="form">
             <h3>Email</h3>
             <input type="text" placeholder="Enter email" id="email">
             <h3>Password</h3>
             <input type="password" placeholder="Enter password" id="password">
-            <h3>Mobile No.</h3>
-            <input type="number" placeholder="Enter mobile number" id="mobile">
-           <button> <a href="login.html">Submit</a> </button>
-            <p>Already have an account? <a href="login.html">Sign In</a>  </p>
+            
+           <button> <a href="login.html">Sign In</a> </button>
+            
         </form>
     </div>
+    
 </body>
 </html>
-
-<script>
-    function signUp(el){
-        event.preventDefault();
-
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
-        var mobile = document.getElementById("mobile").value;
-
-
-        var user = {
-            email: email,
-            password: password,
-            phone: phone,
-
-        };
-
-        var json = JSON.stringify(user);
-        localStorage.setItem(username,json);
-        console.log("user added");
-    }
-
-    
-</script>
