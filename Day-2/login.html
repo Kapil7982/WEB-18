@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login </title>
+    <title>Sign in </title>
     <style>
          #cont{
                width: 30%; height: 500px;  margin: auto; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -21,8 +21,8 @@
        h3{
            padding-left: 20px;
        }
-       button{
-           margin-top: 60px;  border-radius: 10px;  width: 130px; height: 50px; margin-left: 150px;
+      input+input{
+           margin-top: 60px;  border-radius: 10px;  width: 130px; height: 50px; margin-left: 20px;
        }
        P{
            text-align: center; font-weight: bolder;
@@ -38,10 +38,42 @@
             <h3>Password</h3>
             <input type="password" placeholder="Enter password" id="password">
             
-           <button> <a href="login.html">Sign In</a> </button>
+           <input type="submit" id="submit">
             
         </form>
     </div>
     
 </body>
 </html>
+
+<script>
+    var form = document.querySelector("form");
+    var userData = JSON.parse(localStorage.getItem("userData"))
+
+    form.addEventListener("submit",function(event){
+      event.preventDefault();
+        var data={
+            email:form.email.value,
+            password:form.password.value
+
+        }
+
+        if(userData === null)
+        {
+            alert("Please Create an account");
+            // window.location.href = "signup.html";
+        }
+        else if(userData.email===data.email && userData.password === data.password)
+        {
+           alert("Sign in Successfully");
+           localStorage.setItem("signin",JSON.stringify(userData));
+           window.location.href = "index.html"
+        }
+        else 
+        {
+            alert("User doesn't exist");
+        }
+
+
+    })
+</script>
